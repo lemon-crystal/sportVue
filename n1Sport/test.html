@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 300px;
+			height: 300px;
+			background-color: #185;
+			overflow: hidden;
+			/*padding-bottom: 50%;*/
+		}
+		.child{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin: auto;
+			margin-top: 50%;
+			transform: translateY(-50%);
+
+		}
+		.parent{
+			border: 1px solid red;
+			background-color: red;
+			width: 400px;
+			overflow: hidden;
+		}
+		.child1,.child2{
+			border: 1px solid blue;
+			background-color: #185;
+			width: 180px;
+			height: 100px;
+		}
+		.child1{
+			float: left;
+		}
+		.child2{
+			float: right;
+		}
+		.clear{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="box">
+		当margin/padding 取值形式为百分比时 无论left/rught/top/bottom 都是以父级元素的width为参照的
+		<div class="child"></div>
+	</div> -->
+	<div class="parent">
+		<div class="child1"></div>
+		<div class="child2"></div>
+		<!-- <div class="clear"></div>  -->
+	</div>
+	<script type="text/javascript">
+		var a=1;
+		var b=function(a){
+			a=2;
+			// d 相当于在 函数外定义 var=d
+			var c=d=3;
+			return function e(){
+				return a;
+			};
+		}(a);
+		console.log(a,b(),typeof c, typeof d,typeof e);
+		/*
+			下面是铺满屏幕但不保证是否失真的css代码：
+			body {background:url(图片路径) no-repeat; background-size:100% 100%;}
+			下面是图片不失真但不保证是否完全铺满（留有空隙或者超出屏幕）的css代码：
+			1、横向铺满，纵向留有空隙或超出屏幕：
+			body {background:url(图片路径) no-repeat center; background-size:100% auto;}
+			2、纵向铺满，横向留有空隙或超出屏幕：
+			body {background:url(图片路径) no-repeat center; background-size:auto 100%;}
+			补充说明：background-size属于css3，只有支持css3的浏览器才有效。
+		*/
+
+
+		/**
+			清除浮动
+				1.给父级设置固定高度 但是在数据不确定下不好用
+				2.在子级的同一级加一个div.clear
+				.clear{
+					clear:both;
+				}
+				3.在父级中加 overflow：hidden
+		*/
+	</script>
+</body>
+</html>
