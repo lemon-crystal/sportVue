@@ -149,7 +149,7 @@
 						phonenumber:this.phoneNum,
 						password:this.password
 					};
-					this.$axios.post(curUrl,curData)
+					this.$axios.post("/login",curData)
 					.then(res=>{
 						if(res.data.msg){
 							this.$message({
@@ -190,7 +190,7 @@
 						password :this.password,
 						iconname:this.iconname
 					};
-					this.$axios.post(regUrl,regData)
+					this.$axios.post("/register",regData)
 					.then(res=>{
 						if(res.data.code=="0"){
 							this.$message({

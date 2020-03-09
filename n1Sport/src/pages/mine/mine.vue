@@ -81,7 +81,7 @@
 				curData={
 					phonenumber:curUser
 				};
-				this.$axios.post(curUrl,curData)
+				this.$axios.post("/query",curData)
 				.then(res=>{
 					// console.log(res.data[0])
 					if(res.data.msg){
@@ -116,7 +116,7 @@
 					phonenumber:curUser,
 					signature:this.curSignature
 				};
-				this.$axios.post(curUrl,curData)
+				this.$axios.post("/updateSign",curData)
 				.then(res=>{
 					// console.log(res.data[0])
 					if(res.data.msg){

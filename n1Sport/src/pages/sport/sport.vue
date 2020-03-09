@@ -8,10 +8,11 @@
 		<div class="top_zhanwei"></div>
 		<div class="swiper_wrap">
 			<transition-group tag="div" class="swiper_container" name="imgStyle">
-				<div class="swiper_slide" v-for="(item,index) in swiperImgArr" 
-				:key="index" v-show="index===mark">
-					<img :src="item" alt="">
-				</div>
+				<template v-for="(item,index) in swiperImgArr">
+					<div class="swiper_slide"  :key="index" v-show="index===mark">
+						<img :src="item" alt="">
+					</div>
+				</template>
 			</transition-group>
 			<div class="swiper_pagination">
 				<span :class="index===mark?'pagination_item action':'pagination_item'" 

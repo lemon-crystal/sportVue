@@ -20,8 +20,13 @@ Vue.prototype.$message = Message
 Vue.prototype.$axios = Axios
 Vue.prototype.$cookie = VueCookie
 Vue.prototype.HOST = "/api"
-
+// 允许携带cookie
+Axios.defaults.withCredentials=true
+//添加请求头,下载文件的请求需要单独设置！！！！！
+// Axios.defaults.headers.common['Authorization'] = '';
 Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+//生产环境的打包的方式
+Axios.defaults.baseURL=process.env.NODE_ENV == "production" ? '/' : "api";
 
 // 添加请求拦截器
 Axios.interceptors.request.use(function(config) {

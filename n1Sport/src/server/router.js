@@ -4,14 +4,14 @@ var crud = require("./crud.js");
 var path_url = require("./api.js");
 
 // 跨域处理
-// router.all("*", function(req, res, next) {
-// 	res.header("Access-Control-Allow-Origin", "*");
-// 	res.header("Access-Control-Allow-Headers", "X-Requested-With");
-// 	res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-// 	res.header("X-Powered-By", ' 3.2.1');
-// 	res.header("Content-Type", "application/json;charset=utf-8");
-// 	next();
-// })
+router.all("*", function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+	res.header("X-Powered-By", ' 3.2.1');
+	res.header("Content-Type", "application/json;charset=utf-8");
+	next();
+})
 
 // 注册
 router.post(path_url.reg, function(req, res) {
